@@ -13,7 +13,12 @@ form {
 }
 
 mat-checkbox {
-  margin: 10px;
+  margin: 20px;
+}
+
+mat-form-field {
+  padding-top: 10px;
+  border-top: 1.5px solid;
 }
 
 #item {
@@ -22,10 +27,9 @@ mat-checkbox {
 }
 
 #form {
-  background-color: cadetblue;
-  color: white;
-  padding: 20px;
-  font-weight: bold;
+  padding-left: 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 ::ng-deep .mat-checkbox-checked + label.strikethrough{

@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, FormArray, FormControl } from '@angular/forms';
+import { FormBuilder } from '@angular/forms'; // FormGroup, FormArray, FormControl
 import { ListItem } from '../list-item';
 import { TodoService} from '../todo.service';
-import {log} from 'util';
 
 @Component({
   selector: 'app-list',

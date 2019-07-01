@@ -6,11 +6,12 @@
   </p>
 </div>
 
-<form [formGroup]="textInputForm" (ngSubmit)="onSubmit(textInputForm.value)">
-  <div id="form">
-    Add a task:
-    <label>
-      <input type="text" formControlName="task">
-    </label>
-  </div>
-</form>
+<div id="form">
+  <form [formGroup]="textInputForm" (ngSubmit)="onSubmit(textInputForm.value)">
+    <mat-form-field class="example-full-width">
+      <label>
+        <input matInput placeholder="Add a task:" type="text" formControlName="task">
+      </label>
+    </mat-form-field>
+  </form>
+</div>
