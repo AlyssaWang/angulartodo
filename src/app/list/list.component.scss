@@ -1,0 +1,29 @@
+p {
+  display: inline;
+  font-size: 22px;
+  font-weight: lighter;
+}
+
+input {
+  display: inline;
+}
+
+form {
+  padding-top: 15px;
+}
+
+#item {
+  padding: 5px;
+}
+
+#form {
+  background-color: cadetblue;
+  color: white;
+  padding: 20px;
+  font-weight: bold;
+}
+
+input[type=checkbox]:checked + label.strikethrough{
+  text-decoration: line-through;
+  color: lightgray;
+}

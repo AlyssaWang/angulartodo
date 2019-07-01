@@ -1,0 +1,19 @@
+<div *ngFor="let listItem of list">
+<!--  <p *ngIf="!listItem.done" id="item">-->
+  <p id="item">
+    <label>
+      <input type="checkbox" (change)="onDone(listItem)">
+      <label class="strikethrough"> {{ listItem.text }} </label>
+    </label>
+
+  </p>
+</div>
+
+<form [formGroup]="textInputForm" (ngSubmit)="onSubmit(textInputForm.value)">
+  <div id="form">
+    Add a task:
+    <label>
+      <input type="text" formControlName="task">
+    </label>
+  </div>
+</form>
