@@ -1,11 +1,5 @@
 # TodoList
 
-## PROGRESS NOTES
-- Currently working on implementing a separate component for each list item.
-- Also working on consolidating logic into a service instead of in the list class.
-
-## ABOUT ANGULAR
-
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.0.6.
 
 ### Development server
