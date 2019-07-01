@@ -1,11 +1,8 @@
-<div *ngFor="let listItem of list">
+<div id="item" *ngFor="let listItem of list">
 <!--  <p *ngIf="!listItem.done" id="item">-->
-  <p id="item">
-    <label>
-      <input type="checkbox" (change)="onDone(listItem)">
-      <label class="strikethrough"> {{ listItem.text }} </label>
-    </label>
-
+  <p>
+    <mat-checkbox (change)="onDone(listItem)"></mat-checkbox>
+    <label class="strikethrough"> {{ listItem.text }} </label>
   </p>
 </div>
 
