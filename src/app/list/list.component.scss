@@ -1,35 +1,41 @@
-p {
-  display: inline;
-  font-size: 22px;
-  font-weight: lighter;
-}
-
-input {
-  display: inline;
-}
-
-form {
-  padding-top: 15px;
-}
-
 mat-checkbox {
   margin: 20px;
 }
 
-mat-form-field {
+button {
+  margin-left: 5px;
+}
+
+.task {
   padding-top: 10px;
-  border-top: 1.5px solid;
+  padding-bottom: 10px;
 }
 
-#item {
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
-
-#form {
+.inputForm {
   padding-left: 20px;
+  padding-top: 15px;
   margin-top: 20px;
   margin-bottom: 20px;
+}
+
+.inline-block {
+  display: inline-block;
+}
+
+#deleteTaskButton {
+  float: right;
+  background-color: indianred;
+}
+
+#editTaskButton {
+  float: right;
+  background-color: palegreen;
+}
+
+#addTaskInput {
+  padding-top: 10px;
+  border-top: 1.5px solid;
+  display: inline-block;
 }
 
 ::ng-deep .mat-checkbox-checked + label.strikethrough{
