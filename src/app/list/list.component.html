@@ -1,21 +1,32 @@
-<form [formGroup]="listGroup">
+<form *ngFor="let listItem of list; index as i" [formGroup]="listGroup" (ngSubmit)="onEdited(i)">
   <div formArrayName="list">
-    <div class="task" *ngFor="let listItem of list; index as i">
+    <table class="task">
 
-      <div class="inline-block" >
-        <mat-checkbox (change)="onChecked(listItem)"></mat-checkbox>
-        <label class="strikethrough" *ngIf="!edit;" (click)="edit = true;"> {{ listItem.text }} </label>
+      <tr>
+        <td>
+          <mat-checkbox (change)="onChecked(listItem)"></mat-checkbox>
+        </td>
 
-        <div *ngIf="edit;" class="inline-block">
+        <td *ngIf="!edit;" id="taskName" (click)="edit = true;">
+          <label class="strikethrough"> {{ listItem.text }} </label>
+        </td>
+
+        <td *ngIf="edit;">
           <label>
             <input matInput [formControlName]="i" placeholder="Edit task" type="text">
           </label>
-          <button id="editTaskButton" mat-flat-button (click)="onEdited(i)"> Done </button>
-        </div>
-      </div>
+        </td>
 
-      <button id="deleteTaskButton" mat-flat-button (click)="removeFromList(listItem)"> Delete </button>
-    </div>
+        <td *ngIf="edit;">
+          <button id="editTaskButton" mat-flat-button (click)="onEdited(i)"> Done </button>
+        </td>
+
+        <td>
+          <button id="deleteTaskButton" mat-flat-button (click)="removeFromList(i)"> Delete </button>
+        </td>
+      </tr>
+
+    </table>
   </div>
 </form>
 
@@ -23,7 +34,7 @@
   <form [formGroup]="textInputForm" (ngSubmit)="onSubmit(textInputForm.value)">
     <mat-form-field id="addTaskInput">
       <label>
-        <input matInput placeholder="Add a task" type="text" formControlName="task">
+        <input matInput formControlName="task" placeholder="Add a task" type="text">
       </label>
     </mat-form-field>
   </form>

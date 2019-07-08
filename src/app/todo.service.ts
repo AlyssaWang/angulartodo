@@ -14,9 +14,9 @@ export class TodoService {
     this.list.push(task);
   }
 
-  removeFromList(task: ListItem) {
-    for ( let i = 0; i < this.list.length; i++){
-      if ( this.list[i].text === task.text) {
+  removeFromList(index: number) {
+    for (let i = 0; i < this.list.length; i++) {
+      if (index === i) {
         this.list.splice(i, 1);
       }
     }

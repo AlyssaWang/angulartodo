@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, FormArray, FormControl } from '@angular/forms';
 import { ListItem } from '../list-item';
 import { TodoService} from '../todo.service';
-import {log} from 'util';
 
 @Component({
   selector: 'app-list',
@@ -13,7 +12,6 @@ export class ListComponent implements OnInit {
   list;
   edit;
 
-  // count = 0;
   textInputForm;
   listGroup;
 
@@ -50,7 +48,7 @@ export class ListComponent implements OnInit {
     task.done = true;
   }
 
-  onEdited(index: number) {
+  onEdited(index: number) { // TODO: (ngSubmit) vs (click)
     const text = this.getInputText(index);
 
     const listItem = this.todoService.getListItem(index);
@@ -64,8 +62,9 @@ export class ListComponent implements OnInit {
     this.listGroup.get('list').push(new FormControl(task.text));
   }
 
-  removeFromList(task: ListItem) {
-    this.todoService.removeFromList(task);
+  removeFromList(index: number) {
+    this.todoService.removeFromList(index);
+    this.listGroup.get('list').removeAt(index);
   }
 
   getInputText(index: number): ListItem {

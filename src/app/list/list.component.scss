@@ -7,7 +7,6 @@ button {
 }
 
 .task {
-  padding-top: 10px;
   padding-bottom: 10px;
 }
 
@@ -18,18 +17,18 @@ button {
   margin-bottom: 20px;
 }
 
-.inline-block {
-  display: inline-block;
-}
-
-#deleteTaskButton {
-  float: right;
-  background-color: indianred;
+#taskName {
+  width: 60%;
 }
 
 #editTaskButton {
   float: right;
   background-color: palegreen;
+}
+
+#deleteTaskButton {
+  float: right;
+  background-color: indianred;
 }
 
 #addTaskInput {
